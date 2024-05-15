@@ -32,6 +32,7 @@ jobs:
       with:
         asset_path: ./VcenterKiller.exe
         asset_name: VcenterKiller.exe
+        upload_url: https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.get_release.outputs.release_id }}/assets?name=VcenterKiller.exe
         release_token: ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.repository }}
         tag: v1.0  # 替换为您的发布标签
