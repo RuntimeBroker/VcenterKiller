@@ -30,8 +30,8 @@ jobs:
     - name: Upload artifact to release
       uses: actions/upload-release-asset@v1
       with:
-        asset_path: ./myapp_windows.exe
-        asset_name: myapp_windows.exe
+        asset_path: ./VcenterKiller.exe
+        asset_name: VcenterKiller.exe
         release_token: ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.repository }}
         tag: v1.0  # 替换为您的发布标签
