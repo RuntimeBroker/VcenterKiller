@@ -26,14 +26,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: VcenterKiller
-        path: VcenterKiller.exe
-    - name: Upload artifact to release
-      uses: actions/upload-release-asset@v1
-      with:
-        asset_path: ./VcenterKiller.exe
-        asset_name: VcenterKiller.exe
-        asset_content_type: application/octet-stream
-        upload_url: https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.get_release.outputs.release_id }}/assets?name=VcenterKiller.exe
-        release_token: ${{ secrets.GITHUB_TOKEN }}
-        repository: ${{ github.repository }}
-        tag: v1.0  # 替换为您的发布标签
+        path: ./
