@@ -27,3 +27,10 @@ jobs:
       with:
         name: VcenterKiller
         path: ./
+    - name: Add changes and push
+      run: |
+        git config --local user.email "1714985309@qq.com"
+        git config --local user.name "ahr1i9"
+        git add vc
+        git commit -m "Add compiled binary"
+        git push
