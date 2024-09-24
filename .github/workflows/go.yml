@@ -27,9 +27,4 @@ jobs:
         version: 1.23.0
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-    # 可选：上传编译产物
-    - name: Upload build artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: go-build
         path: ./ # 可根据你的项目结构选择编译产物路径
