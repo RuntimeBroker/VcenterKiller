@@ -28,8 +28,14 @@ jobs:
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         path: ./ # 可根据你的项目结构选择编译产物路径
-    - name: Upload build artifact
-      uses: actions/upload-artifact@v3.2.1-node20
+    - name: Zip files
+      run: zip -r dist/VcenterKiller_archive.zip dist/VcenterKiller*
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v2
       with:
-          name: go-build
-          path: ./VcenterKiller_0.0.0-SNAPSHOT-2ad6145_windows_386.tar.gz # 可根据你的项目结构选择编译产物路径
+         repo_token: ${{ secrets.GITHUB_TOKEN }}
+         file: v2/dist/VcenterKiller*
+         tag: ${{ github.ref }}
+         overwrite: true
+         file_glob: true
+         draft: true
